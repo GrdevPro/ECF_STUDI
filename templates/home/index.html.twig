@@ -1,0 +1,17 @@
+{# templates/home/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Services du garage</h1>
+    <ul>
+        <li>
+            <a href="{{ path('app_reparation') }}">Réparation</a>
+        </li>
+        <li>
+            <a href="{{ path('app_vente') }}">Vente</a>
+        </li>
+        <li>
+            <a href="{{ path('app_entretien') }}">Entretien</a>
+        </li>
+    </ul>
+{% endblock %}

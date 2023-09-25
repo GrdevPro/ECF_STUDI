@@ -1,3 +1,58 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+app_login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+
+# config/routes.yaml
+
+admin_employee_controller:
+    resource: App\Controller\AdminEmployeeController
+    type: annotation
+
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+# Ajoutez ces routes manuellement pour votre interface d'administration des services
+
+# config/routes.yaml
+
+# ... Vos routes existantes ...
+
+admin_add_services_index:
+    path: /admin/add/services
+    controller: App\Controller\AdminAddServicesController::index
+    methods: ['GET']
+
+admin_add_services_new:
+    path: /admin/add/services/new
+    controller: App\Controller\AdminAddServicesController::new
+    methods: ['GET', 'POST']
+
+admin_add_services_show:
+    path: /admin/add/services/{id}
+    controller: App\Controller\AdminAddServicesController::show
+    methods: ['GET']
+    requirements:
+        id: \d+
+
+admin_add_services_edit:
+    path: /admin/add/services/{id}/edit
+    controller: App\Controller\AdminAddServicesController::edit
+    methods: ['GET', 'POST']
+    requirements:
+        id: \d+
+
+admin_add_services_delete:
+    path: /admin/add/services/{id}
+    controller: App\Controller\AdminAddServicesController::delete
+    methods: ['POST']
+    requirements:
+        id: \d+
+
+# ... Vos autres routes ...
+
+
+# Ajoutez d'autres routes au besoin pour les opérations d'édition, de suppression, etc.
